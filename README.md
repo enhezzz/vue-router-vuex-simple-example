@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # simpledemo
 
 > A Vue.js project
@@ -25,3 +26,7 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# vue-router-vuex-simple-example
+对vue-router和vuex的基本用法做一个简单的例子描述
+>>>>>>> 84e11f7619c126b734290dad83937682553d7bd6
