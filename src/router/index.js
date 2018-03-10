@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import Init from '@/components/Init'
 
 import vueRouterRoutes from '@/components/vue-router/routes'
-Vue.use(Router)
-
+import vuexRoutes from '@/components/vuex/routes'
+Vue.use(Router);
 export default new Router({
   mode: 'history',
   routes: [
@@ -13,8 +13,8 @@ export default new Router({
       name: 'index',
       component: Init
     },
-    vueRouterRoutes
-   ,
+    vueRouterRoutes,
+   vuexRoutes
     // {
     //   path: '/vuex',
     //   component: vuex-index
