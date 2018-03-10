@@ -18,6 +18,9 @@
               <li>
                    <router-link :to="{name: 'modules'}">modules</router-link>
               </li>
+              <li>
+                   <router-link :to="{name: 'plugins'}">插件</router-link>
+              </li>
           </ul>
           
       </div>

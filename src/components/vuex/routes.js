@@ -4,6 +4,7 @@ import getter from './core/getter'
 import mutation from './core/mutation'
 import action from './core/action'
 import modules from './core/module'
+import plugins from './plugins'
 export default {
     
         path: '/vuex',
@@ -34,7 +35,13 @@ export default {
                 path: 'modules',
                 name: 'modules',
                 component: modules
+            },
+            {
+                path: 'plugins',
+                name: 'plugins',
+                component: plugins
             }
+
         ]
     
 }

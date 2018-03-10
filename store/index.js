@@ -4,9 +4,10 @@ import asyncData from './asyncData'
 import asyncOtherData from './asyncOtherData'
 import {ASYNC_DATA_INCRE,ASYNC_OTHER_DATA_INCRE} from './actions'
 import moduleA from './modules/moduleA'
-console.log(moduleA)
+import mutationType from './plugins'
 Vue.use(Vuex);
 export default new Vuex.Store({
+    plugins: [mutationType],
     modules: {
         moduleA
     },
