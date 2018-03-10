@@ -5,7 +5,13 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
-
+router.beforeEach((to, from, next) => {
+  console.log(`全局前置守卫`);
+  next();
+});
+router.afterEach((to, from) => {
+  console.log('全局后置守卫')
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

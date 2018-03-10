@@ -8,12 +8,12 @@ import namedView from './base/named-view'
 import passProps from './base/pass-props'
 import redirectAndRename from './base/redirect-and-rename'
 import getData from './advanced/get-data.vue'
-import lazyLoad from './advanced/lazy-load'
 import metaInfo from './advanced/meta-info'
 import navGuard from './advanced/nav-guard'
 import scroll from './advanced/scroll'
 import transition from './advanced/transition'
 import matchRes from './base/result/match-res'
+import passDataRes from './base/result/pass-data-res.vue'
 export default  {
     path: '/vue-router',
     component: vueRouterIndex,
@@ -59,7 +59,15 @@ export default  {
       {
         path: 'pass-props',
         name: 'pass-props',
-        component: passProps
+        component: passProps,
+        children: [
+          {
+            path: 'pass-data-res/:data?',
+            name: 'pass-data-res',
+            component: passDataRes,
+            props: true
+          }
+        ]
       },
       {
         path: 'redirect-and-rename',
@@ -74,17 +82,22 @@ export default  {
       {
         path: 'lazy-load',
         name: 'lazy-load',
-        component: lazyLoad
+        component:  () => import(/* webpackChunkName: "lazy-load" */ './advanced/lazy-load.vue')
       },
       {
         path: 'meta-info',
         name: 'meta-info',
-        component: metaInfo
+        component: metaInfo,
+        meta:{name: '路由组件元信息'}
       },
       {
         path: 'nav-guard',
         name: 'nav-guard',
-        component: navGuard
+        component: navGuard,
+        beforeEnter: (to, from, next) => {
+          console.log('路由独享守卫');
+          next();
+        }
       },
       {
         path: 'scroll',
